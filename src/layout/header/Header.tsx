@@ -3,30 +3,29 @@ import {Logo} from "../../components/logo/Logo";
 import {Translator} from "../../components/translator/Translator";
 import styled from "styled-components";
 import {Menu} from "../../components/menu/Menu";
+import {Container} from "../../components/container/Container";
+import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper";
+
 
 export const Header = () => {
     return (
         <header className="header">
-            <StyledHeaderContainer className="header__container">
-                <Logo/>
-                <div className="header__box">
-                    <Menu/>
-                    <Translator/>
-                </div>
-            </StyledHeaderContainer>
+            <Container>
+                <FlexWrapper gap={'32'} align={'center'}>
+                    <Logo/>
+                    <HeaderBox>
+                        <Menu/>
+                        <Translator/>
+                    </HeaderBox>
+                </FlexWrapper>
+            </Container>
         </header>
     );
 };
 
-const StyledHeaderContainer = styled.div`
+const HeaderBox = styled.div`
+  margin-left: auto;
+  align-items: center;
   display: flex;
   gap: 32px;
-  align-items: center;
-  >.header__box{
-    margin-left: auto;
-    align-items: center;
-    display: flex;
-    gap: 32px;
-  }
-
 `

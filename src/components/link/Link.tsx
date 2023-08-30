@@ -4,11 +4,12 @@ import styled from "styled-components";
 type LinkPropsType={
     value: string | number
     href: string
+    target?: string
 }
 
 export const Link = (props:LinkPropsType) => {
     return (
-        <LinkDefault href={props.href}>
+        <LinkDefault href={props.href} target={props.target}>
             {props.value}
         </LinkDefault>
     );

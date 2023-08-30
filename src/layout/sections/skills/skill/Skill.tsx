@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from "styled-components";
+import {Container} from "../../../../components/container/Container";
 
 type SkillPropsType = {
     title: string
     subTitle: string
 }
-
 
 export const Skill = (props: SkillPropsType) => {
     return (
@@ -21,6 +21,7 @@ const StyledSkill = styled.div`
   flex-direction: column;
   border: 1px solid #ABB2BF;
   max-width: 178px;
+  align-self: flex-start;
 `
 
 const SkillTitle = styled.div`

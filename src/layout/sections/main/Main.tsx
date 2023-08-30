@@ -3,33 +3,37 @@ import styled from "styled-components";
 import photo from '../../../assets/main/photo.png'
 import {Link} from "../../../components/link/Link";
 import {Icon} from "../../../components/icon/Icon";
+import {Points} from "../../../components/points/Points";
+import {Container} from "../../../components/container/Container";
+import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper";
 
 export const Main = () => {
     return (
-        <MainSection>
-            <div>
-                <MainTitle>Сергей Королев <span>Front-end developer</span></MainTitle>
-                <MainDesc>Я Верстальщик / Frontend разработчик. Занимаюсь разработкой сайтов и веб приложений
-                </MainDesc>
-                <Link value={'Позвонить'} href={'tel:89872822244'}/>
-            </div>
-            <MainImgBox>
-                <DecorMainImgBox>
-                    <Icon iconId={'simbol'} width="156" height="156" viewBox="0 0 156 156"/>
-                </DecorMainImgBox>
-                <img src={photo} alt=""/>
-                <ImgLink href="#">
-                    <div></div>
-                    Вы можете ознакомиться с моими работами в <span> портфолио</span></ImgLink>
-            </MainImgBox>
-        </MainSection>
+        <Container>
+            <FlexWrapper gap={'32'} align={'center'} justify={'space-between'}>
+                <MainTextBlock>
+                    <MainTitle>Сергей Королев <span>Front-end developer</span></MainTitle>
+                    <MainDesc>Я Верстальщик / Frontend разработчик. Занимаюсь разработкой сайтов и веб приложений
+                    </MainDesc>
+                    <Link value={'Позвонить'} href={'tel:89872822244'}/>
+                </MainTextBlock>
+                <MainImgBox>
+                    <DecorMainImgBox>
+                        <Icon iconId={'simbol'} width="156" height="156" viewBox="0 0 156 156"/>
+                    </DecorMainImgBox>
+                    <Points quantity={20} width={'84'} height={'84'} wrap={'wrap'} gap={16} right={10} bottom={15}/>
+                    <img src={photo} alt="photo"/>
+                    <ImgLink href="#">
+                        Вы можете посмотреть мое <span> портфолио</span>
+                    </ImgLink>
+                </MainImgBox>
+            </FlexWrapper>
+        </Container>
     );
 };
 
-const MainSection = styled.section`
-  display: flex;
-  gap: 32px;
-  align-items: center;
+const MainTextBlock = styled.div`
+flex: 0 1 calc(50% - 8px);
 `
 
 const MainTitle = styled.h1`
@@ -61,11 +65,13 @@ const MainImgBox = styled.div`
   align-items: center;
   position: relative;
   z-index: 2;
+  flex: 0 1 calc(50% - 8px);
 
   > img {
     position: relative;
     z-index: 1;
     object-fit: cover;
+    max-width: 100%;
   }
 `
 
@@ -78,13 +84,13 @@ const ImgLink = styled.a`
   padding: 8px;
   gap: 10px;
 
-
-  > div {
+  &:before {
+    content: '';
+    display: inline-block;
     width: 16px;
     height: 16px;
     flex: 0 0 16px;
     background: #C778DD;
-
   }
 
   span {

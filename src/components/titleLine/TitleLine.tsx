@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import {Theme} from "../Theme";
 
 type WidthLinePropsType = {
     width: string
@@ -15,5 +16,5 @@ export const TitleLine = (props: WidthLinePropsType) => {
 const WidthLine = styled.div<WidthLinePropsType>`
   width: ${props => `${props.width}%`};
   height: 1px;
-  background-color: #C778DD;
+  background-color: ${Theme.colors.accent}
 `

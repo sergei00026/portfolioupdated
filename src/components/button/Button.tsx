@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import {Theme} from "../Theme";
 
 type ButtonPropsType={
     value: string | number
@@ -19,7 +20,7 @@ const ButtonDefault = styled.button`
   align-items: center;
   min-height: 37px;
   padding: 5px 16px;
-  border: 1px solid  #C778DD;
+  border: 1px solid  ${Theme.colors.accent};
   font-weight: 500;
-  color: #fff;
+  color: ${Theme.colors.primary};
 `

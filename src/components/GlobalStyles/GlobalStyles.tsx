@@ -1,8 +1,8 @@
 import {createGlobalStyle} from "styled-components";
+import {Theme} from "../Theme";
 
 export const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap');
-  
+
   * {
     padding: 0px;
     margin: 0px;
@@ -32,8 +32,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    color: #fff;
-    line-height: 1;
+    color: ${Theme.colors.primary};
+    line-height: 1.5;
     font-family: 'Fira Code', monospace;
     text-rendering: optimizeLegibility;
     -ms-text-size-adjust: 100%;
@@ -41,7 +41,7 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #282C33;
+    background-color: ${Theme.colors.bgPrimary};
   }
 
   input,
@@ -88,13 +88,9 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: inherit;
     font-size: inherit;
   }
-
-  [class*=__container] {
-    max-width: 1024px;
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
-    margin: 0 auto;
-    padding: 15px;
+  
+  section{
+    padding-top: 70px;
   }
   
 `
