@@ -9,7 +9,7 @@ type LengthPropsType ={
     left?: number
     right?: number
 }
-export const Square = (props: LengthPropsType) => {
+export const Square:React.FC<LengthPropsType> = (props: LengthPropsType) => {
     return (
         <LengthStyled
             length={props.length}

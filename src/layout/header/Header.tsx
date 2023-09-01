@@ -1,31 +1,27 @@
 import React from 'react';
 import {Logo} from "../../components/logo/Logo";
 import {Translator} from "../../components/translator/Translator";
-import styled from "styled-components";
 import {Menu} from "../../components/menu/Menu";
 import {Container} from "../../components/container/Container";
 import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper";
+import {S} from "./Header_Styles"
 
 
-export const Header = () => {
+export const Header: React.FC = () => {
     return (
-        <header className="header">
+        <S.HeaderWpapper className="header">
             <Container>
                 <FlexWrapper gap={'32'} align={'center'}>
                     <Logo/>
-                    <HeaderBox>
+                    <S.HeaderBox>
                         <Menu/>
-                        <Translator/>
-                    </HeaderBox>
+                    </S.HeaderBox>
+                    <Translator/>
+                    <S.BurgerButton isOpen={false}>
+                        <span></span>
+                    </S.BurgerButton>
                 </FlexWrapper>
             </Container>
-        </header>
+        </S.HeaderWpapper>
     );
 };
-
-const HeaderBox = styled.div`
-  margin-left: auto;
-  align-items: center;
-  display: flex;
-  gap: 32px;
-`

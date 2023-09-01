@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import {Theme} from "../../../../components/Theme";
+import {Theme} from "../../../../styles/Theme";
 import {Link} from "../../../../components/link/Link";
 import React from "react";
+import {S} from '../Portfolio-Styles'
 
 type JobTypeProps = {
     img: string
@@ -13,15 +14,15 @@ type JobTypeProps = {
 }
 
 
-export const Job = (props: JobTypeProps) => {
+export const Job:React.FC<JobTypeProps> = (props: JobTypeProps) => {
     return (
-        <JobStyled>
+        <S.Job>
             <img src={props.img} alt="image"/>
-            <JobTags>{props.tags}</JobTags>
-            <JobItem>
-                <JobTitle>{props.title}</JobTitle>
-                <JobDesc>{props.desc}</JobDesc>
-                <JobButtons>
+            <S.JobTags>{props.tags}</S.JobTags>
+            <S.JobItem>
+                <S.JobTitle>{props.title}</S.JobTitle>
+                <S.JobDesc>{props.desc}</S.JobDesc>
+                <S.JobButtons>
                     <Link
                         value={'Смотреть'}
                         href={props.hrefView}
@@ -32,42 +33,9 @@ export const Job = (props: JobTypeProps) => {
                         href={props.hrefLink}
                         target={'_blank'}
                     />
-                </JobButtons>
-            </JobItem>
-        </JobStyled>
+                </S.JobButtons>
+            </S.JobItem>
+        </S.Job>
     )
 }
 
-export const JobStyled = styled.div`
-  border: 1px solid ${Theme.colors.secondary};
-  align-self: start;
-
-  > img {
-    max-width: 100%;
-    border-bottom: 1px solid ${Theme.colors.secondary};
-  }
-`
-const JobTags = styled.div`
-  padding: 8px;
-  color: ${Theme.colors.secondary};
-  border-bottom: 1px solid ${Theme.colors.secondary};
-
-`
-const JobItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-`
-const JobTitle = styled.h4`
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 16px;
-`
-const JobDesc = styled.p`
-  color: ${Theme.colors.secondary};
-  margin-bottom: 16px;
-`
-const JobButtons = styled.div`
-  display: flex;
-  gap: 16px;
-`

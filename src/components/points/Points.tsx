@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {Theme} from "../Theme";
+import {Theme} from "../../styles/Theme";
 
 type PointsPropsType = {
     quantity: number
@@ -15,7 +15,7 @@ type PointsPropsType = {
     className?:string
 }
 
-export const Points = (props: PointsPropsType) => {
+export const Points:React.FC<PointsPropsType> = (props: PointsPropsType) => {
     let span = []
     for (let i = 0; i < props.quantity; i++) {
         span.push(<span key={i}></span>)

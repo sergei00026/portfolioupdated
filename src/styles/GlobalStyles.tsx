@@ -1,5 +1,5 @@
 import {createGlobalStyle} from "styled-components";
-import {Theme} from "../Theme";
+import {Theme} from "./Theme";
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -28,7 +28,7 @@ export const GlobalStyles = createGlobalStyle`
   html,
   body {
     height: 100%;
-    min-width: 320px;
+    //min-width: 320px;
   }
 
   body {

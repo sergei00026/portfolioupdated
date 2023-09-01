@@ -1,9 +1,10 @@
 import React from 'react';
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+import {Theme} from "../../styles/Theme";
 
-export const Menu = () => {
+export const Menu:React.FC = () => {
     return (
-        <StyledMenu>
+        <StyledMenu isOpen={false}>
             <ul>
                 <li><a href="#"><span>#</span>home</a></li>
                 <li><a href="#"><span>#</span>Портфолио</a></li>
@@ -14,29 +15,49 @@ export const Menu = () => {
     );
 };
 
-const StyledMenu = styled.nav`
+const StyledMenu = styled.nav<{isOpen: Boolean}>`
   ul {
     display: flex;
     gap: 32px;
     align-items: center;
     font-weight: 500;
-    color: #ABB2BF;
+    color: ${Theme.colors.secondary};
+    transition: .3s ease;
 
+    @media ${Theme.media.mobile} {
+      flex-direction: column;
+      color: ${Theme.colors.primary};
+    }
 
     li {
       transition: 0.3s ease;
 
       :hover {
-        color: #fff;
+        color: ${Theme.colors.primary};
       }
 
       span {
-        color: #C778DD;
+        color: ${Theme.colors.accent};
       }
     }
-
-    li > a > span {
-      color: #C778DD;
-    }
   }
+
+  @media ${Theme.media.mobile} {
+    position: fixed;
+    z-index: 100;
+    background-color: rgba(43, 44, 47, 0.89);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    ${props => props.isOpen && css<{isOpen: Boolean}>`
+    display: flex;  
+  `}
+    
+  }
+  
+ 
 `

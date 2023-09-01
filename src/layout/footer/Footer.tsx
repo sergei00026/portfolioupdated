@@ -1,26 +1,27 @@
 import React from 'react';
 import {Container} from "../../components/container/Container";
-import styled from "styled-components";
 import {Icon} from "../../components/icon/Icon";
-import {Theme} from "../../components/Theme";
+import {S} from  './Footer-styles'
 
-export const Footer = () => {
+export const Footer:React.FC = () => {
     return (
-        <FooterStyled>
+        <S.FooterStyled>
             <Container>
-                <FooterBox>
-                    <div>
-                        <FooterDesc>
+                <S.FooterBox>
+                    <S.FooterDescBox>
+                        <S.FooterDesc>
                             <a href={'#'}>
                                 <Icon iconId={'logo'} width="16" height="17" viewBox="0 0 16 17"/>
                             </a>
-                            <a href="mailto:ksvladimirovish@gmail.com" target="_blank">ksvladimirovish@gmail.com</a>
-                        </FooterDesc>
+                            <a href="mailto:ksvladimirovish@gmail.com" target="_blank">ksvladimirovish
+                                <wbr/>
+                                @gmail.com</a>
+                        </S.FooterDesc>
                         <p>Верстальщик и front-end developer</p>
-                    </div>
-                    <div>
-                        <FooterMedia>Медиа</FooterMedia>
-                        <FooterSocials>
+                    </S.FooterDescBox>
+                    <S.FooterMediaBox>
+                        <S.FooterMedia>Медиа</S.FooterMedia>
+                        <S.FooterSocials>
                             <a href="https://github.com/sergei00026" target="_blank">
                                 <Icon iconId={'github'} width="32" height="32" viewBox="0 0 32 32"/>
                             </a>
@@ -30,68 +31,13 @@ export const Footer = () => {
                             <a href="https://discordapp.com/users/923635773134213171/" target="_blank">
                                 <Icon iconId={'discord'} width="32" height="32" viewBox="0 0 32 32"/>
                             </a>
-                        </FooterSocials>
-                    </div>
-                </FooterBox>
-                <FooterCopy>
+                        </S.FooterSocials>
+                    </S.FooterMediaBox>
+                </S.FooterBox>
+                <S.FooterCopy>
                     © Copyright 2023. Made by Sergei Korolev
-                </FooterCopy>
+                </S.FooterCopy>
             </Container>
-
-        </FooterStyled>
+        </S.FooterStyled>
     );
 };
-
-const FooterStyled = styled.footer`
-  border-top: 1px solid ${Theme.colors.secondary};
-  margin-top: 145px;
-
-  ${Container} {
-    padding: 32px 0;
-  }
-`
-
-const FooterBox = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 32px;
-  padding-bottom: 48px;
-`
-
-const FooterCopy = styled.div`
-  text-align: center;
-  color: ${Theme.colors.secondary};
-`
-
-const FooterDesc = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 16px;
-  color: ${Theme.colors.secondary};
-`
-
-const FooterMedia = styled.div`
-
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 12px;
-
-`
-const FooterSocials = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  svg {
-    fill: ${Theme.colors.secondary};
-    transition: 0.3s;
-    flex: 0 0 32px;
-    justify-self: center;
-
-    &:hover {
-      fill: ${Theme.colors.primary};
-    }
-
-  }
-`

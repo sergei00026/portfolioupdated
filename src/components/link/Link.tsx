@@ -7,7 +7,7 @@ type LinkPropsType={
     target?: string
 }
 
-export const Link = (props:LinkPropsType) => {
+export const Link:React.FC<LinkPropsType> = (props:LinkPropsType) => {
     return (
         <LinkDefault href={props.href} target={props.target}>
             {props.value}

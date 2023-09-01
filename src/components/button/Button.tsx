@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from "styled-components";
-import {Theme} from "../Theme";
+import {Theme} from "../../styles/Theme";
 
 type ButtonPropsType={
     value: string | number
 }
 
-export const Button = (props:ButtonPropsType) => {
+export const Button:React.FC<ButtonPropsType> = (props:ButtonPropsType) => {
     return (
         <button>
             {props.value}

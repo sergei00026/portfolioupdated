@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from "styled-components";
-import {Theme} from "../Theme";
+import {Theme} from "../../styles/Theme";
 
 type WidthLinePropsType = {
     width: string
 }
-export const TitleLine = (props: WidthLinePropsType) => {
+export const TitleLine:React.FC<WidthLinePropsType> = (props: WidthLinePropsType) => {
     return (
         <WidthLine width={props.width}/>
 

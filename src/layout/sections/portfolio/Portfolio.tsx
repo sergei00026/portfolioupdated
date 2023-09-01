@@ -2,7 +2,6 @@ import React from 'react';
 import {Container} from "../../../components/container/Container";
 import {SectionTitle, SectionTitleBox} from "../../../components/sectionTitleBox/SectionTitleBox";
 import {TitleLine} from "../../../components/titleLine/TitleLine";
-import styled from "styled-components";
 import img01 from '../../../assets/portfolio/01.jpg'
 import img02 from '../../../assets/portfolio/02.jpg'
 import img03 from '../../../assets/portfolio/03.jpg'
@@ -10,19 +9,20 @@ import img04 from '../../../assets/portfolio/04.jpg'
 import img05 from '../../../assets/portfolio/05.jpg'
 import img06 from '../../../assets/portfolio/06.jpg'
 import {Job} from "./job/Job";
+import {S} from './Portfolio-Styles'
 
-export const Portfolio = () => {
+export const Portfolio: React.FC = () => {
     return (
         <section>
             <Container>
                 <SectionTitleBox>
                     <SectionTitle><span>#</span>Портфолио</SectionTitle>
                     <TitleLine width='50'/>
-                    <StyledLink>
+                    <S.Link>
                         <a href={'#'}>View all ~~&gt;</a>
-                    </StyledLink>
+                    </S.Link>
                 </SectionTitleBox>
-                <Jobs>
+                <S.Jobs>
                     <Job
                         img={img01}
                         desc={'Стильный электросамокат с мощным аккумулятором'}
@@ -73,32 +73,10 @@ export const Portfolio = () => {
                     ></Job>
 
 
-                </Jobs>
+                </S.Jobs>
             </Container>
         </section>
     );
 };
 
-const StyledLink = styled.div`
-  margin-left: auto;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-
-  a {
-    transition: 0.3s;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-
-`
-
-const Jobs = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 330px));
-  gap: 16px;
-  justify-content: center;
-`
 
