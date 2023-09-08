@@ -90,7 +90,8 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   section{
-    padding-top: 70px;
+    padding-top: 80px;
+    background-color: ${Theme.colors.bgPrimary};
   }
   
 `

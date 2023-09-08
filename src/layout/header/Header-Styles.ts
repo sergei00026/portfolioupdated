@@ -2,10 +2,15 @@ import styled, {css} from "styled-components";
 import {Theme} from "../../styles/Theme";
 
 const HeaderWpapper = styled.header`
-  margin-top: 32px;
+  padding: 32px 0px;
+  position: fixed;
+  z-index: 2;
+  top: 0;left: 0;
+  width: 100%;
+  background-color: ${Theme.colors.bgPrimary};
 `
 
-const HeaderBox = styled.div`
+const HeaderBox = styled.div<{ isOpen?: Boolean }>`
   margin-left: auto;
   align-items: center;
   display: flex;
@@ -25,7 +30,7 @@ const BurgerButton = styled.div<{ isOpen: Boolean }>`
     background-color: ${Theme.colors.primary};
     position: relative;
     transition: 0.3s ease;
-    
+    cursor: pointer;
     ${props => props.isOpen && css<{ isOpen: Boolean }>`
       background-color: transparent;
     `}
@@ -35,6 +40,7 @@ const BurgerButton = styled.div<{ isOpen: Boolean }>`
       display: inline-block;
       height: 1.5px;
       background-color: ${Theme.colors.primary};
+      transition: 0.3s ease;
     }
 
     &:before {

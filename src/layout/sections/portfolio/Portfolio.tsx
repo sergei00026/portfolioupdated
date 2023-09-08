@@ -10,10 +10,11 @@ import img05 from '../../../assets/portfolio/05.jpg'
 import img06 from '../../../assets/portfolio/06.jpg'
 import {Job} from "./job/Job";
 import {S} from './Portfolio-Styles'
+import styled from "styled-components";
 
 export const Portfolio: React.FC = () => {
     return (
-        <section>
+        <PortfolioBox id={'portfolio'}>
             <Container>
                 <SectionTitleBox>
                     <SectionTitle><span>#</span>Портфолио</SectionTitle>
@@ -75,8 +76,9 @@ export const Portfolio: React.FC = () => {
 
                 </S.Jobs>
             </Container>
-        </section>
+        </PortfolioBox>
     );
 };
-
+const PortfolioBox = styled.section`
+position: relative`
 

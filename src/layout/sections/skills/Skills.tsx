@@ -8,6 +8,7 @@ import {SectionTitle, SectionTitleBox} from "../../../components/sectionTitleBox
 import {Container} from "../../../components/container/Container";
 import {Points} from "../../../components/points/Points";
 import {S} from './Skills-Styles'
+import {Fade} from "react-awesome-reveal";
 
 const skillsAll = [
     {
@@ -32,9 +33,9 @@ const skillsAll = [
     },
 ]
 
-export const Skills:React.FC = () => {
+export const Skills: React.FC = () => {
     return (
-        <section>
+        <SkillsBox id={'aboutMe'}>
             <Container>
                 <SectionTitleBox>
                     <SectionTitle><span>#</span>Навыки</SectionTitle>
@@ -48,14 +49,19 @@ export const Skills:React.FC = () => {
                         <Points quantity={25} width={'63'} height={'63'} wrap={'wrap'} gap={10.75} top={5} left={5}/>
                         <Points quantity={25} width={'63'} height={'63'} wrap={'wrap'} gap={10.75} top={45} left={45}/>
                     </S.SkillsBoxIcons>
+
                     <S.SkillsBox>
-                        {skillsAll.map(s=>{
-                            return <Skill title={s.title} subTitle={s.subTitle} key={s.id}/>
-                        })}
+                        <Fade cascade={true} damping={0.2}>
+                            {skillsAll.map(s => {
+                                return <Skill title={s.title} subTitle={s.subTitle} key={s.id}/>
+                            })}
+                        </Fade>
                     </S.SkillsBox>
                 </S.SkillsBody>
             </Container>
-        </section>
+        </SkillsBox>
     );
 };
 
+const SkillsBox = styled.section`
+  position: relative;`

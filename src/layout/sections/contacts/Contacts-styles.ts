@@ -12,7 +12,7 @@ const SectionContacts = styled.section`
     .points {
       top: 55%;
       left: -170px;
-      z-index: -1;
+      z-index: 1;
 
     }
   }

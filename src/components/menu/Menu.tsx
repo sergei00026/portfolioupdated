@@ -1,28 +1,57 @@
 import React from 'react';
 import styled, {css} from "styled-components";
 import {Theme} from "../../styles/Theme";
+import {Link} from "react-scroll";
 
-export const Menu:React.FC = () => {
+export const Menu: React.FC<{ isOpen: Boolean }> = (props: { isOpen: Boolean }) => {
+
+    const menuData = [
+        {
+            title: 'Главная',
+            href: 'home'
+        },
+        {
+            title: 'Портфолио',
+            href: 'portfolio'
+        },
+        {
+            title: 'Навыки',
+            href: 'aboutMe'
+        },
+        {
+            title: 'Контакты',
+            href: 'contacts'
+        },
+    ]
+
     return (
-        <StyledMenu isOpen={false}>
+        <StyledMenu isOpen={props.isOpen}>
             <ul>
-                <li><a href="#"><span>#</span>home</a></li>
-                <li><a href="#"><span>#</span>Портфолио</a></li>
-                <li><a href="#"><span>#</span>Навыки</a></li>
-                <li><a href="#"><span>#</span>Контакты</a></li>
+                {menuData.map((item, idx) => {
+                    return (
+                        <li key={idx}>
+                            <NavLink
+                                to={item.href}
+                                spy={true}
+                                activeClass={'active'}
+                                smooth={true}
+                            ><span>#</span> {item.title}</NavLink>
+                        </li>
+                    )
+                })}
+
             </ul>
         </StyledMenu>
     );
 };
 
-const StyledMenu = styled.nav<{isOpen: Boolean}>`
+const StyledMenu = styled.nav<{ isOpen: Boolean }>`
   ul {
     display: flex;
     gap: 32px;
     align-items: center;
     font-weight: 500;
     color: ${Theme.colors.secondary};
-    transition: .3s ease;
 
     @media ${Theme.media.mobile} {
       flex-direction: column;
@@ -30,11 +59,6 @@ const StyledMenu = styled.nav<{isOpen: Boolean}>`
     }
 
     li {
-      transition: 0.3s ease;
-
-      :hover {
-        color: ${Theme.colors.primary};
-      }
 
       span {
         color: ${Theme.colors.accent};
@@ -42,22 +66,33 @@ const StyledMenu = styled.nav<{isOpen: Boolean}>`
     }
   }
 
+
   @media ${Theme.media.mobile} {
     position: fixed;
-    z-index: 100;
     background-color: rgba(43, 44, 47, 0.89);
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
-    ${props => props.isOpen && css<{isOpen: Boolean}>`
-    display: flex;  
-  `}
-    
+    transition: .3s ease ;
+    transform: translateX(-100%);
+    ${props => props.isOpen && css<{ isOpen: Boolean }>`
+      z-index: 100;
+      transform: translateX(0);
+    `}
+
   }
-  
- 
+`
+
+const NavLink = styled(Link)`
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  :hover, &.active {
+    color: ${Theme.colors.primary};
+  }
+
 `

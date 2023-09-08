@@ -6,11 +6,16 @@ import {AboutMe} from "./layout/sections/aboutMe/AboutMe";
 import {Portfolio} from "./layout/sections/portfolio/Portfolio";
 import {Contacts} from "./layout/sections/contacts/Contacts";
 import {Footer} from "./layout/footer/Footer";
+import {Particle} from "./components/particle/Particle";
+import {ButtonToTop} from "./components/buttonToTop/ButtonToTop";
+import {Scroll} from "./components/scroll";
 
 
 function App() {
     return (
         <div className="App">
+            <Scroll/>
+            <Particle/>
             <Header/>
             <main>
                 <Main/>
@@ -20,6 +25,7 @@ function App() {
                 <Contacts/>
             </main>
             <Footer/>
+            <ButtonToTop/>
         </div>
     );
 }

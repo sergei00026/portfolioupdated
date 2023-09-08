@@ -1,14 +1,18 @@
 import styled from "styled-components";
 import {Theme} from "../../../styles/Theme";
 import {Fsz} from "../../../styles/Common";
+import {Container} from "../../../components/container/Container";
 
 const MainWrapper = styled.div`
-  padding-top: 62px;
-  gap: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  
+  padding-top: 80px;
+  padding-bottom: 20px;
+
+  ${Container} {
+    gap: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   .main-img-box {
     @media ${Theme.media.tabletMin} {
@@ -31,12 +35,14 @@ const MainWrapper = styled.div`
   @media ${Theme.media.tablet} {
     flex-direction: column;
     justify-content: center;
-    padding-top: 32px;
+    //padding-top: 32px;
 
   }
 `
 const MainTextBlock = styled.div`
-  flex: 0 1 calc(50% - 8px);
+  @media ${Theme.media.tabletMin} {
+    flex: 0 1 calc(50% - 8px);
+  }
 `
 
 const MainTitle = styled.h1`
@@ -58,6 +64,10 @@ const MainTitle = styled.h1`
 const MainDesc = styled.p`
   line-height: 156%;
   color: #ABB2BF;
+
+  b {
+    display: none;
+  }
 
   :not(:last-child) {
     margin-bottom: 24px;
@@ -100,7 +110,7 @@ const DecorMainImgBox = styled.div`
   z-index: 1;
 `
 
-export  const S={
+export const S = {
     MainWrapper,
     MainTextBlock,
     MainTitle,

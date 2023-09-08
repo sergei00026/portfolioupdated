@@ -2,10 +2,11 @@ import styled from "styled-components";
 import {Theme} from "../../styles/Theme";
 import {Container} from "../../components/container/Container";
 
-const FooterStyled = styled.footer`
+const Footer = styled.footer`
   border-top: 1px solid ${Theme.colors.secondary};
   margin-top: 145px;
-
+  position: relative;
+  background-color: ${Theme.colors.bgPrimary};
   ${Container} {
     padding-top: 32px;
     padding-bottom: 32px;
@@ -31,10 +32,10 @@ const FooterCopy = styled.div`
 const FooterDescBox = styled.div`
   display: flex;
   flex-direction: column;
-  
+
   @media screen and (max-width: 500px) {
     align-items: center;
-    p{
+    p {
       text-align: center;
     }
   }
@@ -46,7 +47,7 @@ const FooterDesc = styled.div`
   gap: 16px;
   margin-bottom: 16px;
   color: ${Theme.colors.secondary};
-  
+
 `
 const FooterMediaBox = styled.div`
   display: flex;
@@ -82,7 +83,7 @@ const FooterSocials = styled.div`
 `
 
 export const S = {
-    FooterStyled,
+    FooterStyled: Footer,
     FooterBox,
     FooterCopy,
     FooterDescBox,

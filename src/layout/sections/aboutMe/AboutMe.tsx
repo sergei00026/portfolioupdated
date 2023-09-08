@@ -5,11 +5,12 @@ import {Link} from "../../../components/link/Link";
 import photo from '../../../assets/main/photo.png'
 import {Container} from "../../../components/container/Container";
 import {S} from './Aboutme-styles'
+import styled from "styled-components";
 
 
 export const AboutMe:React.FC = () => {
     return (
-        <section>
+        <AboutMeBox>
             <Container>
                 <SectionTitleBox>
                     <SectionTitle><span>#</span>Обо мне</SectionTitle>
@@ -41,8 +42,10 @@ export const AboutMe:React.FC = () => {
                     </S.AboutMeImg>
                 </S.AboutMeBody>
             </Container>
-        </section>
+        </AboutMeBox>
     );
 };
 
+const AboutMeBox = styled.section`
+  position: relative;`
 
