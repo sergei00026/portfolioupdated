@@ -27,7 +27,7 @@ const Jobs = styled.div`
     column-count: 2;
   }
   @media screen and  (max-width: 600px){
-    column-count:1;
+    column-count: 1;
   }
 `
 

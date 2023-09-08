@@ -45,6 +45,15 @@ const StyledSkill = styled.div`
   border: 1px solid #ABB2BF;
   max-width: 178px;
   align-self: flex-start;
+  @media ${Theme.media.tablet} {
+    max-width: calc(50% - 8px);
+    flex-grow: 1;
+    align-self: stretch;
+  }
+  @media ${Theme.media.mobile} {
+    max-width: 100%;
+    width: 100%;
+  }
 `
 
 const SkillTitle = styled.div`

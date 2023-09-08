@@ -4,7 +4,7 @@ import {Translator} from "../../components/translator/Translator";
 import {Menu} from "../../components/menu/Menu";
 import {Container} from "../../components/container/Container";
 import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper";
-import {S} from "./Header_Styles"
+import {S} from "./Header-Styles"
 
 
 export const Header: React.FC = () => {
