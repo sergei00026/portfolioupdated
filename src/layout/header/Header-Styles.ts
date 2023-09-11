@@ -8,6 +8,9 @@ const HeaderWpapper = styled.header`
   top: 0;left: 0;
   width: 100%;
   background-color: ${Theme.colors.bgPrimary};
+  @media ${Theme.media.tablet}{
+    padding: 20px 0;
+  }
 `
 
 const HeaderBox = styled.div<{ isOpen?: Boolean }>`

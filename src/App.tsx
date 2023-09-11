@@ -9,6 +9,8 @@ import {Footer} from "./layout/footer/Footer";
 import {Particle} from "./components/particle/Particle";
 import {ButtonToTop} from "./components/buttonToTop/ButtonToTop";
 import {Scroll} from "./components/scroll";
+import {Translator} from "./components/translator/Translator";
+import React from "react";
 
 
 function App() {

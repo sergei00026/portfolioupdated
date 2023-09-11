@@ -8,19 +8,23 @@ import {S} from "./Header-Styles"
 
 
 export const Header: React.FC = () => {
-    const [menuIsOpen, setIsOpen] =useState(false)
-    const onBurgerBtnClick = () => {setIsOpen(!menuIsOpen)}
+    const [menuIsOpen, setIsOpen] = useState(false)
+    const onBurgerBtnClick = () => {
+        setIsOpen(!menuIsOpen)
+    }
 
     return (
         <S.HeaderWpapper className="header">
             <Container>
                 <FlexWrapper gap={'32'} align={'center'}>
                     <Logo/>
-                    <S.HeaderBox onClick={()=>{setIsOpen(false)}}>
-                        <Menu isOpen={menuIsOpen}   />
+                    <S.HeaderBox onClick={() => {
+                        setIsOpen(false)
+                    }}>
+                        <Menu isOpen={menuIsOpen}/>
                     </S.HeaderBox>
-                    {/*<Translator/>*/}
-                    <S.BurgerButton isOpen={menuIsOpen} onClick={onBurgerBtnClick} >
+                    <Translator/>
+                    <S.BurgerButton isOpen={menuIsOpen} onClick={onBurgerBtnClick}>
                         <span></span>
                     </S.BurgerButton>
                 </FlexWrapper>

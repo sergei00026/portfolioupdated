@@ -57,11 +57,11 @@ export const Particle = () => {
                         value: "#ffffff",
                     },
                     links: {
-                        color: "#ffffff",
+                        color: "rgba(255,255,255,0.28)",
                         distance: 250,
                         enable: true,
-                        opacity: 0.5,
-                        width: 1,
+                        opacity: 0.3,
+                        width: 0.8,
                     },
                     move: {
                         direction: "none",

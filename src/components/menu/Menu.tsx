@@ -24,6 +24,7 @@ export const Menu: React.FC<{ isOpen: Boolean }> = (props: { isOpen: Boolean }) 
         },
     ]
 
+
     return (
         <StyledMenu isOpen={props.isOpen}>
             <ul>
@@ -48,7 +49,7 @@ export const Menu: React.FC<{ isOpen: Boolean }> = (props: { isOpen: Boolean }) 
 const StyledMenu = styled.nav<{ isOpen: Boolean }>`
   ul {
     display: flex;
-    gap: 32px;
+    gap: 16px;
     align-items: center;
     font-weight: 500;
     color: ${Theme.colors.secondary};
@@ -56,6 +57,7 @@ const StyledMenu = styled.nav<{ isOpen: Boolean }>`
     @media ${Theme.media.mobile} {
       flex-direction: column;
       color: ${Theme.colors.primary};
+      gap: 32px;
     }
 
     li {
@@ -69,11 +71,11 @@ const StyledMenu = styled.nav<{ isOpen: Boolean }>`
 
   @media ${Theme.media.mobile} {
     position: fixed;
-    background-color: rgba(43, 44, 47, 0.89);
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    background-color: rgba(43, 44, 47, 0.89);
     display: flex;
     align-items: center;
     justify-content: center;

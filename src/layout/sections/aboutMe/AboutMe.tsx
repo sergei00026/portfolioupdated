@@ -6,6 +6,7 @@ import photo from '../../../assets/main/photo.png'
 import {Container} from "../../../components/container/Container";
 import {S} from './Aboutme-styles'
 import styled from "styled-components";
+import {Translator} from "../../../components/translator/Translator";
 
 
 export const AboutMe:React.FC = () => {
