@@ -24,7 +24,6 @@ export const Menu: React.FC<{ isOpen: Boolean }> = (props: { isOpen: Boolean }) 
         },
     ]
 
-
     return (
         <StyledMenu isOpen={props.isOpen}>
             <ul>

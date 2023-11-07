@@ -8,6 +8,8 @@ import img03 from '../../../assets/portfolio/03.jpg'
 import img04 from '../../../assets/portfolio/04.jpg'
 import img05 from '../../../assets/portfolio/05.jpg'
 import img06 from '../../../assets/portfolio/06.jpg'
+import img07 from '../../../assets/portfolio/07.jpg'
+import img08 from '../../../assets/portfolio/08.jpg'
 import {Job} from "./job/Job";
 import {S} from './Portfolio-Styles'
 import styled from "styled-components";
@@ -20,7 +22,7 @@ export const Portfolio: React.FC = () => {
                     <SectionTitle><span>#</span>Портфолио</SectionTitle>
                     <TitleLine width='50'/>
                     <S.Link>
-                        <a href={'#'}>View all ~~&gt;</a>
+                        {/*<a href={'#'}>View all ~~&gt;</a>*/}
                     </S.Link>
                 </SectionTitleBox>
                 <S.Jobs>
@@ -72,8 +74,22 @@ export const Portfolio: React.FC = () => {
                         hrefView={'https://sergei00026.github.io/House-of-Sites/dist/'}
                         hrefLink={'https://github.com/sergei00026/House-of-Sites'}
                     ></Job>
-
-
+                    <Job
+                        img={img07}
+                        desc={'Маркетинг, Застройщик, Дома'}
+                        tags={'HTML SCSS Webpack'}
+                        title={'Сайт строительной компании'}
+                        hrefView={'https://sergei00026.github.io/visina/dist/'}
+                        hrefLink={'https://github.com/sergei00026/visina'}
+                    ></Job>
+                    <Job
+                        img={img08}
+                        desc={'Маркетинг, Парикмахерская, Косметология'}
+                        tags={'HTML SCSS Webpack'}
+                        title={'Косметология'}
+                        hrefView={'https://sergei00026.github.io/high/dist/'}
+                        hrefLink={'https://github.com/sergei00026/high'}
+                    ></Job>
                 </S.Jobs>
             </Container>
         </PortfolioBox>

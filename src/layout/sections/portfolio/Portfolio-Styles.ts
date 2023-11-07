@@ -18,17 +18,18 @@ const Link = styled.div`
 `
 
 const Jobs = styled.div`
-  //display: grid;
-  //grid-template-columns: repeat(auto-fill, minmax(250px, 320px));
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 320px));
+ min-height: 100%;
   gap: 16px;
-  column-count: 3;
+  //column-count: 3;
   justify-content: center;
-  @media ${Theme.media.pc}{
-    column-count: 2;
-  }
-  @media screen and  (max-width: 600px){
-    column-count: 1;
-  }
+    // @media ${Theme.media.pc}{
+  //   column-count: 2;
+  // }
+  // @media screen and  (max-width: 600px){
+  //   column-count: 1;
+  // }
 `
 
 const Job = styled.div`
