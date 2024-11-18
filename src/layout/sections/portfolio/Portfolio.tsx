@@ -10,6 +10,7 @@ import img05 from '../../../assets/portfolio/05.jpg'
 import img06 from '../../../assets/portfolio/06.jpg'
 import img07 from '../../../assets/portfolio/07.jpg'
 import img08 from '../../../assets/portfolio/08.jpg'
+import img09 from '../../../assets/portfolio/09.jpg'
 import {Job} from "./job/Job";
 import {S} from './Portfolio-Styles'
 import styled from "styled-components";
@@ -89,6 +90,14 @@ export const Portfolio: React.FC = () => {
                         title={'Косметология'}
                         hrefView={'https://sergei00026.github.io/high/dist/'}
                         hrefLink={'https://github.com/sergei00026/high'}
+                    ></Job>
+                    <Job
+                       img={img09}
+                       desc={'Маркетинг, Продажи, Косметология'}
+                       tags={'HTML SCSS Vite TS'}
+                       title={'Искусственный интеллект'}
+                       hrefView={'https://sergei00026.github.io/veraVlaEdu/dist/'}
+                       hrefLink={'https://github.com/sergei00026/veraVlaEdu'}
                     ></Job>
                 </S.Jobs>
             </Container>

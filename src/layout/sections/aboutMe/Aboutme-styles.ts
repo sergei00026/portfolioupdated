@@ -17,7 +17,22 @@ const AboutMeText = styled.div`
   ${Fsz({fMax: 16, fMin: 12})}
   p {
     :not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+  li{
+    padding-left: 7px;
+    margin-left: 7px;
+    :not(:last-child) {
       margin-bottom: 10px;
+    }
+    :first-child{
+      margin-top: 16px;
+    }
+    ::marker{
+      content: "•";
+      padding-left: 10px;
+     
     }
   }
 
@@ -34,6 +49,7 @@ const AboutMeImg = styled.div`
     img {
       max-width: 100%;
     }
+    
 
     > div {
       margin: 0 auto;

@@ -35,7 +35,7 @@ export const Footer:React.FC = () => {
                     </S.FooterMediaBox>
                 </S.FooterBox>
                 <S.FooterCopy>
-                    © Copyright 2023. Made by Sergei Korolev
+                    © Copyright 2024. Made by Sergei Korolev
                 </S.FooterCopy>
             </Container>
         </S.FooterStyled>
